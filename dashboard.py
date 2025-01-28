@@ -130,18 +130,26 @@ def main():
     gmail_logo = "https://www.gstatic.com/images/branding/product/1x/gmail_2020q4_48dp.png"
     linkedin_logo = "https://cdn-icons-png.flaticon.com/512/3536/3536505.png"
 
-    col1, col2 = st.columns([1, 2])
-    with col1:
+    col = st.container()
+    with col:
         st.markdown(
             f"""
-            <strong>Campaign type:</strong>
-            <img src="{gmail_logo}" width="24" style="vertical-align:middle;"> Gmail +
-            <img src="{linkedin_logo}" width="24" style="vertical-align:middle;"> LinkedIn
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <strong>Campaign type:</strong>
+                    <img src="{gmail_logo}" width="24" style="vertical-align:middle;"> Gmail +
+                    <img src="{linkedin_logo}" width="24" style="vertical-align:middle;"> LinkedIn
+                </div>
+                <div>
+                    <strong>⏰ Schedule:</strong> From 9:00am to 6:00pm EST, Monday - Friday
+                </div>
+                <div>
+                    <strong>🏁 Start Date:</strong> January 27th, 2025
+                </div>
+            </div>
             """,
             unsafe_allow_html=True
-        )
-    with col2:
-        st.markdown("**⏰ Schedule:** From 9:00am to 6:00pm EST, Monday - Friday")
+    )
     
     # Fetch campaign data
     campaign_data = fetch_campaign_data()
