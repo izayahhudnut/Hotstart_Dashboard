@@ -285,7 +285,7 @@ def create_funnel_chart(data):
     We'll use a single color or a colorscale approach.
     """
     funnel_data = {
-        'Stage': ['Total Leads', 'Contacted', 'Opened', 'Replied'],
+        'Stage': ['Sent Emails', 'Contacted', 'Opened', 'Replied'],
         'Count': [
             data['leads_count'],
             data['contacted_count'],
