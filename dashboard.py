@@ -247,6 +247,28 @@ def main():
         
         with col2:
             create_engagement_distribution(campaign_data)
+            
+    st.markdown("### Leads (Google Sheet)")
+    
+    # Example public embed link (from Publish to the Web):
+    sheet_url = "https://docs.google.com/spreadsheets/d/1x-BxEZUJL0cRaCYKwtkidpFl9LBq2kz_UR18RcIbjLk/edit?gid=1465228395#gid=1465228395"
+
+    # If you have a normal share link, ensure it's in the right format for embedding
+    # e.g. replace "/edit#gid=" with "/embed?gid=" or "/pubhtml?gid="
+    # sheet_url = sheet_url.replace("/edit#gid=", "/embed?gid=")
+
+    st.markdown(
+        f"""
+        <iframe 
+            src="{sheet_url}" 
+            width="100%" 
+            height="600" 
+            frameborder="0"
+            style="border: 1px solid #ccc"
+        ></iframe>
+        """,
+        unsafe_allow_html=True
+    )
 
 def create_funnel_chart(data):
     """
@@ -323,6 +345,9 @@ def create_engagement_distribution(data):
         title_x=0.5
     )
     st.plotly_chart(fig, use_container_width=True)
+    
+    
+    
 
 if __name__ == "__main__":
     main()
